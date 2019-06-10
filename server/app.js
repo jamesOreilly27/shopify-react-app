@@ -23,6 +23,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded())
 app.use(express.static(path.join(__dirname, '..', 'public'))); 
 
+app.use('/api', require('./routes'))
+
 app.use('/static', express.static(path.join(__dirname, 'public')))
 app.use('*', (req, res, next) => res.sendFile(path.join(__dirname, '..', 'public', 'index.html')))
+
 server.listen(PORT, () => console.log(chalk.blue.bgWhite.bold(`We are live on port ${server.address().port}`)))
