@@ -1,10 +1,9 @@
 import React from 'react'
 import { FlexRowContainer, FlexColumnContainer } from './components/styled-components/BaseComponents'
+import ProductList from './components/ProductList'
 
 const Main = () => (
-  <FlexColumnContainer>
-    <h1> Hello From Boilerplate!! </h1>
-  </FlexColumnContainer>
+  <ProductList />
 )
 
 export default Main
