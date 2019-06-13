@@ -7,11 +7,10 @@ const gotProducts = products => ({
   payload: products
 })
 
-export const fetchAllProductsThunk = () => dispatch => (
+export const fetchAllProductsThunk = () => dispatch => 
   axios.get(`/api/products/all`)
   .then(res => dispatch(gotProducts(res.data)))
   .catch(error => dispatch(gotProducts(error.message)))
-)
 
 const reducer = (products = [], action) => {
   switch(action.type) {
