@@ -1,11 +1,10 @@
 import React from 'react'
+import { FlexRowContainer, FlexColumnContainer } from './components/styled-components/BaseComponents'
 
-const Main = () => {
-    return (
-        <div>
-            <h1> Hello From Boilerplate!! </h1>
-        </div>
-    )
-}
+const Main = () => (
+  <FlexColumnContainer>
+    <h1> Hello From Boilerplate!! </h1>
+  </FlexColumnContainer>
+)
 
 export default Main
