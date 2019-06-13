@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchAllProductsThunk } from '../store/products'
 import { FlexColumnContainer } from './styled-components/BaseComponents'
+import ProductCard from './ProductCard'
 
 class ProductList extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class ProductList extends Component {
     return (
       <FlexColumnContainer>
         {this.props.products && this.props.products.map(product => {
-          return <div key={product.id}>{product.title}</div>
+          return <ProductCard key={product.id} product={product} />
         })}
       </FlexColumnContainer>
     )

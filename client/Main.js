@@ -3,8 +3,7 @@ import { FlexRowContainer, FlexColumnContainer } from './components/styled-compo
 import ProductList from './components/ProductList'
 
 const Main = () => (
-  <ProductList>
-  </ProductList>  
+  <ProductList />
 )
 
 export default Main
