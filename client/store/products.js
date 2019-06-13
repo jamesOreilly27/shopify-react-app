@@ -16,7 +16,7 @@ export const fetchAllProductsThunk = () => dispatch => (
 const reducer = (products = [], action) => {
   switch(action.type) {
     case GOT_PRODUCTS:
-      return action.payload
+      return action.payload.products
     default:
       return products
   }
