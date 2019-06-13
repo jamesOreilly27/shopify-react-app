@@ -1,9 +1,9 @@
 import React from 'react'
 import { FlexRowContainer, FlexColumnContainer } from './components/styled-components/BaseComponents'
-import ProductList from './components/ProductList'
+import CustomerList from './components/CustomerList'
 
 const Main = () => (
-  <ProductList />
+  <CustomerList />
 )
 
 export default Main
