@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchAllOrdersThunk } from '../store/orders'
 import { FlexColumnContainer } from './styled-components/BaseComponents'
+import { OrderCard } from '../components'
 
 class OrderList extends Component {
   constructor(props) {
@@ -14,7 +15,11 @@ class OrderList extends Component {
 
   render() {
     return (
-      <div>hello world!</div>
+      <FlexColumnContainer>
+        {this.props.orders.map(order => {
+          return <OrderCard key={order.id} order={order} />
+        })}
+      </FlexColumnContainer>
     )
   }
 }
