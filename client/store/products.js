@@ -12,6 +12,11 @@ export const fetchAllProductsThunk = () => dispatch =>
   .then(res => dispatch(gotProducts(res.data)))
   .catch(error => dispatch(gotProducts(error.message)))
 
+export const fetchProductsByCollection = id => dispatch =>
+  axios.get(`/api/collections/${id}/products`)
+  .then(res => dispatch(gotProducts(res.data)))
+  .catch(error => dispatch(gotProducts(error)))
+
 const reducer = (products = [], action) => {
   switch(action.type) {
     case GOT_PRODUCTS:
