@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchAllCustomersThunk } from '../store/customers'
 import { FlexColumnContainer } from './styled-components/BaseComponents'
-import CustomerCard from './CustomerCard'
+import { CustomerCard } from '../components'
 
 class CustomerList extends Component {
   constructor(props) {

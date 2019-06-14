@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchAllProductsThunk } from '../store/products'
 import { FlexColumnContainer } from './styled-components/BaseComponents'
-import ProductCard from './ProductCard'
+import { ProductCard } from '../components'
 
 class ProductList extends Component {
   constructor(props) {
