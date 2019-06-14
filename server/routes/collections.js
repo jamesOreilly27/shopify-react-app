@@ -16,4 +16,12 @@ router.get('/smart/all', (req, res, next) => {
   .catch(console.error)
 })
 
+router.get('/:id/products', (req, res, next) => {
+  const id = req.params.id
+  axios.get(`${baseUrl}/collects.json?collection_id=${id}`)
+  .then(res => res.data)
+  .then(collection => res.json(collection))
+  .catch(console.error)
+})
+
 module.exports = router
