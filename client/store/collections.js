@@ -1,5 +1,4 @@
 import axios from 'axios'
-import Axios from 'axios';
 
 const GOT_COLLECTIONS = 'GOT_COLLECTIONS'
 
