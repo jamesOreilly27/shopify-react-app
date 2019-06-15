@@ -16,6 +16,13 @@ router.get('/smart/all', (req, res, next) => {
   .catch(console.error)
 })
 
+router.get('/custom/:id', (req, res, next) => {
+  axios.get(`${baseUrl}/custom_collections/${req.params.id}.json`)
+  .then(res => res.data)
+  .then(collection => res.json(collection))
+  .catch(console.error)
+})
+
 router.get('/:id/products', (req, res, next) => {
   const id = req.params.id
   axios.get(`${baseUrl}/collects.json?collection_id=${id}`)
