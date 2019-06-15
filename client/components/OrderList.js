@@ -10,7 +10,7 @@ class OrderList extends Component {
   }
 
   componentDidMount() {
-    this.props.getOrders()
+    return !this.props.orders[0] ? this.props.getOrders() : ''
   }
 
   render() {
