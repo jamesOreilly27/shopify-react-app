@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import { fetchAllOrdersThunk } from '../store/orders'
 import history from '../history'
 import { FlexRowContainer, FlexColumnContainer } from './styled-components/BaseComponents'
-import { OrderList, ProductList } from '../components'
+import { OrderList, ProductList, CustomerList } from '../components'
 
 class Main extends Component {
   constructor(props){
@@ -22,6 +22,7 @@ class Main extends Component {
           <Switch>
             <Route exact path="/" component={ProductList} />
             <Route exact path="/orders/all" component={OrderList} />
+            <Route exact path="/customers/all" component={CustomerList} />
           </Switch>
       </Router>
     )
