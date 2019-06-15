@@ -15,3 +15,4 @@ export { default as OrderCard } from './OrderCard'
 
 //Collections
 export { default as CollectionList } from './CollectionList'
+export { default as Collection } from './Collection'

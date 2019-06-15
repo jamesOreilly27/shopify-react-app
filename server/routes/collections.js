@@ -2,29 +2,15 @@ const router = require('express').Router()
 const axios = require('axios')
 const baseUrl = require('./baseUrl')
 
-router.get('/custom/all', (req, res, next) => {
-  axios.get(`${baseUrl}/custom_collections.json`)
+router.get('/:type/all', (req, res, next) => {
+  axios.get(`${baseUrl}/${req.params.type}_collections.json`)
   .then(res => res.data)
   .then(collections => res.json(collections))
   .catch(console.error)
 })
 
-router.get('/smart/all', (req, res, next) => {
-  axios.get(`${baseUrl}/smart_collections.json`)
-  .then(res => res.data)
-  .then(collections => res.json(collections))
-  .catch(console.error)
-})
-
-router.get('/custom/:id', (req, res, next) => {
-  axios.get(`${baseUrl}/custom_collections/${req.params.id}.json`)
-  .then(res => res.data)
-  .then(collection => res.json(collection))
-  .catch(console.error)
-})
-
-router.get('/smart/:id', (req, res, next) => {
-  axios.get(`${baseUrl}/smart_collections/${req.params.id}.json`)
+router.get('/:type/:id', (req, res, next) => {
+  axios.get(`${baseUrl}/${req.params.type}_collections/${req.params.id}.json`)
   .then(res => res.data)
   .then(collection => res.json(collection))
   .catch(console.error)

@@ -7,7 +7,7 @@ const gotCollection = collection => ({
   payload: collection
 })
 
-const fetchCollectionThunk = (id, type) => dispatch =>
+export const fetchCollectionThunk = (type, id) => dispatch =>
   axios.get(`/api/collections/${type}/${id}`)
   .then(res => dispatch(gotCollection(res.data)))
   .catch(err => dispatch(gotCollection(err)))
