@@ -1,4 +1,5 @@
 export { default as Main } from './Main'
+export { default as Navbar } from './Navbar'
 
 //Products
 export { default as ProductCard } from './ProductCard'
