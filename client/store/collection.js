@@ -9,13 +9,13 @@ const gotCollection = collection => ({
 
 export const fetchCollectionThunk = (type, id) => dispatch =>
   axios.get(`/api/collections/${type}/${id}`)
-  .then(res => dispatch(gotCollection(res.data)))
+  .then(res => dispatch(gotCollection(res.data[`${type}_collection`])))
   .catch(err => dispatch(gotCollection(err)))
 
 const reducer = (collection = { products: []}, action) => {
   switch(action.type) {
     case GOT_COLLECTION:
-      return action.payload
+      return {...action.payload, products: []}
     default:
       return collection
   }
