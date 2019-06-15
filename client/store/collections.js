@@ -1,16 +1,27 @@
 import axios from 'axios'
+import Axios from 'axios';
 
 const GOT_COLLECTIONS = 'GOT_COLLECTIONS'
 
-const gotCollection = collections => ({
+const gotCollections = collections => ({
   type: GOT_COLLECTIONS,
   payload: collections
 })
 
-export const fetchCollectionThunk = () => dispatch =>
-  axios.get(`/api/collections/all`)
-  .then(res => dispatch(gotCollection(res.data)))
-  .catch(err => dispatch(gotCollection(err)))
+//Collections are stored in two separate endpoints on the shopify api.
+//FetchCollectionsThunk gets all from both end points and concats them into a single array
+
+export const fetchCollectionsThunk = () => dispatch => {
+  let placeholder = {}
+  axios.get(`/api/collections/custom/all`)
+  .then(res => res.data.custom_collections)
+  .then(test => {
+    placeholder = test
+    return axios.get('/api/collections/smart/all')
+  })
+  .then(res => dispatch(gotCollections(placeholder.concat(res.data.smart_collections))))
+  .catch(err => dispatch(gotCollections(err)))
+}
 
 const reducer = (collections = [], action) => {
   switch(action.type) {

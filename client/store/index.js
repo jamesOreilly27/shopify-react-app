@@ -6,8 +6,9 @@ import products from './products'
 import customers from './customers'
 import orders from './orders'
 import collection from './collection'
+import collections from './collections'
 
-const reducer = combineReducers({ products, customers, orders, collection })
+const reducer = combineReducers({ products, customers, orders, collection, collections })
 
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,

@@ -7,7 +7,8 @@ const navLinks = [
   {type: 'home', path: '/'},
   {type: 'products', path: '/products/all'},
   {type: 'customers', path: '/customers/all'},
-  {type: 'orders', path: '/orders/all'}
+  {type: 'orders', path: '/orders/all'},
+  {type: 'collections', path: '/collections/all'}
 ]
 
 const LinkContainer = styled.div`

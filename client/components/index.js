@@ -12,3 +12,6 @@ export { default as CustomerList } from './CustomerList'
 //Orders
 export { default as OrderList } from './OrderList'
 export { default as OrderCard } from './OrderCard'
+
+//Collections
+export { default as CollectionList } from './CollectionList'
