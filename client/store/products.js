@@ -12,6 +12,7 @@ export const fetchAllProductsThunk = () => dispatch =>
   .then(res => dispatch(gotProducts(res.data)))
   .catch(error => dispatch(gotProducts(error.message)))
 
+
 const reducer = (products = [], action) => {
   switch(action.type) {
     case GOT_PRODUCTS:
