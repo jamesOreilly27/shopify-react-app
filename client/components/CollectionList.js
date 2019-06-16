@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import { fetchCollectionsThunk } from '../store/collections'
 import { FlexColumnContainer } from './styled-components/BaseComponents'
 
@@ -16,7 +17,9 @@ class CollectionList extends Component {
     return (
       <FlexColumnContainer>
         {this.props.collections && this.props.collections.map(collection => {
-          return <div> {collection.handle} </div>
+          let type = ''
+          collection.rules ? type = "smart" : type = "custom"
+           return <Link key={collection.id} to={`/collections/${type}/${collection.id}`}> {collection.handle} </Link>
         })}
       </FlexColumnContainer>
     )
