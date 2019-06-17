@@ -9,4 +9,11 @@ router.get('/all', (req, res, next) => {
   .catch(console.error)
 })
 
+router.get('/:id', (req, res, next) => {
+  axios.get(`${baseUrl}/customers/${id}.json`)
+  .then(res => res.data)
+  .then(customer => res.json(customer))
+  .catch(console.error)
+})
+
 module.exports = router
