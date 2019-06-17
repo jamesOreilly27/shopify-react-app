@@ -10,7 +10,7 @@ router.get('/all', (req, res, next) => {
 })
 
 router.get('/:id', (req, res, next) => {
-  axios.get(`${baseUrl}/customers/${id}.json`)
+  axios.get(`${baseUrl}/customers/${req.params.id}.json`)
   .then(res => res.data)
   .then(customer => res.json(customer))
   .catch(console.error)
