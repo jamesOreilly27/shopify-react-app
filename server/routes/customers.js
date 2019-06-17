@@ -16,4 +16,11 @@ router.get('/:id', (req, res, next) => {
   .catch(console.error)
 })
 
+router.get('/:id/orders', (req, res, next) => {
+  axios.get(`${baseUrl}/customers/${req.params.id}/orders.json`)
+  .then(res => res.data)
+  .then(orders => res.json(orders))
+  .catch(console.error)
+})
+
 module.exports = router
