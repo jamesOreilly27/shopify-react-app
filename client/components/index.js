@@ -8,6 +8,7 @@ export { default as ProductList } from './ProductList'
 //Customers
 export { default as CustomerCard } from './CustomerCard'
 export { default as CustomerList } from './CustomerList'
+export { default as Customer } from './Customer'
 
 //Orders
 export { default as OrderList } from './OrderList'
