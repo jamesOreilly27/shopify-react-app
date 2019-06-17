@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { FlexRowContainer, FlexColumnContainer } from './styled-components/BaseComponents'
-import { fetchCustomerThunk } from '../store/customer'
+import { fetchCustomerThunk, fetchCustomerOrdersThunk } from '../store/customer'
 
 class Customer extends Component {
   constructor(props) {
@@ -26,6 +26,7 @@ const mapState = state => state
 const mapDispatch = dispatch => ({
   getCustomer(id) {
     dispatch(fetchCustomerThunk(id))
+    dispatch(fetchCustomerOrdersThunk(id))
   }
 })
 
